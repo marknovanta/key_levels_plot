@@ -6,11 +6,13 @@ import numpy as np
 import datetime
 
 # Fetch historical stock data from yfinance
-ticker = 'AAPL'  # Example ticker symbol for Apple Inc.
+ticker = input('Ticker: ')  # Example ticker symbol for Apple Inc.
 
 end_date = datetime.datetime.now().strftime('%Y-%m-%d')
+# DEFINE TIME PERIOD
 start_date = (datetime.datetime.now() - datetime.timedelta(days=365*1)).strftime('%Y-%m-%d')
 print(start_date)
+
 data = yf.download(ticker, start=start_date, end=end_date)
 
 # Extract the high and low prices from the historical data
