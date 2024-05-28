@@ -7,10 +7,11 @@ import datetime
 
 # Fetch historical stock data from yfinance
 ticker = input('Ticker: ')  # Example ticker symbol for Apple Inc.
+years = int(input('Years: '))
 
 end_date = datetime.datetime.now().strftime('%Y-%m-%d')
 # DEFINE TIME PERIOD
-start_date = (datetime.datetime.now() - datetime.timedelta(days=365*1)).strftime('%Y-%m-%d')
+start_date = (datetime.datetime.now() - datetime.timedelta(days=365*years)).strftime('%Y-%m-%d')
 print(start_date)
 
 data = yf.download(ticker, start=start_date, end=end_date)
